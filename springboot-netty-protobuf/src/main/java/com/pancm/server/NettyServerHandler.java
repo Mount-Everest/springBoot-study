@@ -1,5 +1,6 @@
 package com.pancm.server;
 
+import io.netty.channel.ChannelHandler;
 import org.springframework.stereotype.Service;
 
 import com.pancm.protobuf.UserInfo;
@@ -20,6 +21,7 @@ import io.netty.util.ReferenceCountUtil;
  * @date 2017年10月8日
  */
 @Service("nettyServerHandler")
+@ChannelHandler.Sharable
 public class NettyServerHandler extends ChannelInboundHandlerAdapter {
 
 	/** 空闲次数 */
